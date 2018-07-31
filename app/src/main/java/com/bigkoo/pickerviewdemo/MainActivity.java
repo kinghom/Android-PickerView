@@ -21,15 +21,16 @@ import android.widget.Toast;
 
 import com.bigkoo.pickerview.builder.OptionsPickerBuilder;
 import com.bigkoo.pickerview.builder.TimePickerBuilder;
+import com.bigkoo.pickerview.listener.CustomListener;
 import com.bigkoo.pickerview.listener.OnOptionsSelectChangeListener;
 import com.bigkoo.pickerview.listener.OnOptionsSelectListener;
 import com.bigkoo.pickerview.listener.OnTimeSelectChangeListener;
+import com.bigkoo.pickerview.listener.OnTimeSelectListener;
 import com.bigkoo.pickerview.view.OptionsPickerView;
 import com.bigkoo.pickerview.view.TimePickerView;
-import com.bigkoo.pickerview.listener.CustomListener;
-import com.bigkoo.pickerview.listener.OnTimeSelectListener;
 import com.bigkoo.pickerviewdemo.bean.CardBean;
 import com.bigkoo.pickerviewdemo.bean.ProvinceBean;
+import com.contrarywind.view.WheelView;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -290,13 +291,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         });
                     }
                 })
-                .setContentTextSize(18)
-                .setType(new boolean[]{false, false, false, true, true, true})
-                .setLabel("年", "月", "日", "时", "分", "秒")
-                .setLineSpacingMultiplier(1.2f)
-                .setTextXOffset(0, 0, 0, 40, 0, -40)
+                .setContentTextSize(16)
+                .setType(new boolean[]{true, true, true, false, false, false})
+                //.setLabel("年", "月", "日", "时", "分", "秒")
+                .setLineSpacingMultiplier(3.0f)
+                .setTextXOffset(-40, 0, 40, 40, 0, -40)
                 .isCenterLabel(false) //是否只显示中间选中项的label文字，false则每项item全部都带有label。
-                .setDividerColor(0xFF24AD9D)
+                //.setDividerColor(0xFF24AD9D)
+                .setDividerType(WheelView.DividerType.NONE)
+                //.setDividerColor(Color.WHITE)
+                .setBgColor(Color.WHITE)
+                .setItemNum(7)//必须要单数(实际是5，有2个被压缩)
                 .build();
 
     }

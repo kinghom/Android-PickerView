@@ -111,5 +111,6 @@ public class PickerOptions {
     public Typeface font = Typeface.MONOSPACE;//字体样式
     public WheelView.DividerType dividerType = WheelView.DividerType.FILL;//分隔线类型
 
+    public int itemnum = 11; // 条目数量
 
 }

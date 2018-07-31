@@ -41,7 +41,7 @@ public class WheelView extends View {
     }
 
     public enum DividerType { // 分隔线类型
-        FILL, WRAP
+        FILL, WRAP,NONE
     }
 
     private DividerType dividerType;//分隔线类型
@@ -431,9 +431,11 @@ public class WheelView extends View {
             endX = measuredWidth - startX;
             canvas.drawLine(startX, firstLineY, endX, firstLineY, paintIndicator);
             canvas.drawLine(startX, secondLineY, endX, secondLineY, paintIndicator);
-        } else {
+        } else if(dividerType == DividerType.FILL) {
             canvas.drawLine(0.0F, firstLineY, measuredWidth, firstLineY, paintIndicator);
             canvas.drawLine(0.0F, secondLineY, measuredWidth, secondLineY, paintIndicator);
+        } else {
+
         }
 
         //只显示选中项Label文字的模式，并且Label文字不为空，则进行绘制
@@ -788,6 +790,12 @@ public class WheelView extends View {
         if (lineSpacingMultiplier != 0) {
             this.lineSpacingMultiplier = lineSpacingMultiplier;
             judgeLineSpace();
+        }
+    }
+
+    public void setItemNum(int num){
+        if(num>3){
+            this.itemsVisible = num;
         }
     }
 

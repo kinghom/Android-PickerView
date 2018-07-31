@@ -262,6 +262,11 @@ public class TimePickerBuilder {
         return this;
     }
 
+    public TimePickerBuilder setItemNum(int num){
+        mPickerOptions.itemnum = num;
+        return this;
+    }
+
     /**
      * @param listener 切换item项滚动停止时，实时回调监听。
      * @return

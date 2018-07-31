@@ -53,6 +53,7 @@ public class WheelTime {
     private int dividerColor;
 
     private float lineSpacingMultiplier;
+    private int itemnum;
     private WheelView.DividerType dividerType;
     private boolean isLunarCalendar = false;
     private ISelectTimeCallback mSelectChangeCallback;
@@ -646,6 +647,16 @@ public class WheelTime {
         wv_hours.setLineSpacingMultiplier(lineSpacingMultiplier);
         wv_minutes.setLineSpacingMultiplier(lineSpacingMultiplier);
         wv_seconds.setLineSpacingMultiplier(lineSpacingMultiplier);
+    }
+
+    public void setItemNum(int num){
+        this.itemnum = num;
+        wv_day.setItemNum(itemnum);
+        wv_month.setItemNum(itemnum);
+        wv_year.setItemNum(itemnum);
+        wv_hours.setItemNum(itemnum);
+        wv_minutes.setItemNum(itemnum);
+        wv_seconds.setItemNum(itemnum);
     }
 
     public void setLabels(String label_year, String label_month, String label_day, String label_hours, String label_mins, String label_seconds) {
